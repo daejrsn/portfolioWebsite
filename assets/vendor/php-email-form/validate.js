@@ -1,9 +1,9 @@
 (function () {
   "use strict";
 
-//  API key from the .env file
-const CONTACT_FORM_API = '84c8a55b-5a05-4b7e-aa30-76f856b0f273';
-document.getElementById('contact-form-api-key').value = CONTACT_FORM_API;
+  // API key from the .env file
+  const CONTACT_FORM_API = '84c8a55b-5a05-4b7e-aa30-76f856b0f273';
+  document.getElementById('contact-form-api-key').value = CONTACT_FORM_API;
 
   let forms = document.querySelectorAll('.php-email-form');
 
@@ -56,7 +56,7 @@ document.getElementById('contact-form-api-key').value = CONTACT_FORM_API;
     })
     .then(response => {
       if (response.ok) {
-        return response.json(); //  If the response is JSON
+        return response.json(); // If the response is JSON
       } else {
         throw new Error(`${response.status} ${response.statusText} ${response.url}`);
       }
@@ -65,6 +65,7 @@ document.getElementById('contact-form-api-key').value = CONTACT_FORM_API;
       thisForm.querySelector('.loading').classList.remove('d-block');
       if (data.success) { // Assuming the JSON response has a 'success' field
         thisForm.querySelector('.sent-message').classList.add('d-block');
+        thisForm.querySelector('.sent-message').innerHTML = "Your Email has been sent. Thank you!";
         thisForm.reset();
       } else {
         throw new Error(data.message ? data.message : 'Form submission failed and no error message returned from: ' + action);

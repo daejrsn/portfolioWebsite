@@ -430,14 +430,14 @@ section .container {
   font-family: "Poppins", sans-serif;
 }
 
-.section-title h2::after {
+/* .section-title h2::after {
   content: "";
   width: 120px;
   height: 1px;
   display: inline-block;
   background: #D3D3D3;
   margin: 4px 10px;
-}
+} */
 
 .section-title p {
   margin: 0;
