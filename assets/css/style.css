@@ -831,6 +831,12 @@ section .container {
   margin-bottom: 30px;
 }
 
+.portfolio .portfolio-wrap img {
+  width: 100%; /* Ensure images fit within the container */
+  height: 200px; /* Set a fixed height for images */
+  object-fit: cover; /* Ensures images are scaled proportionally to fit */
+}
+
 .portfolio #portfolio-flters {
   padding: 0;
   margin: 0 auto 15px auto;
@@ -1049,8 +1055,23 @@ section .container {
 }
 
 .portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #f67a7a;
+  background-color: #18d26e;
 }
+
+.portfolio-details .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-details .swiper-slide img {
+  width: 100%; /* Makes the image take the full width of the container */
+  height: auto; /* Maintains the aspect ratio */
+  object-fit: contain; /* Ensures the image fits within the container without being cropped */
+  max-height: 80vh; /* Prevents the image from overflowing the screen height */
+  max-width: 100%; /* Prevents the image from overflowing the container width */
+}
+
 
 /*--------------------------------------------------------------
 # Contact
